@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.2.7.RELEASE'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //添加spring-context的模块
+    compile(project(":spring-context"))
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
