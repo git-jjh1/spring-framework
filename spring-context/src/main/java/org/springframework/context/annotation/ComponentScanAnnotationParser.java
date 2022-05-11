@@ -116,6 +116,8 @@ class ComponentScanAnnotationParser {
 					ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS);
 			Collections.addAll(basePackages, tokenized);
 		}
+		// 1.指定basePackageClasses，指定多个类，与这几个类同级/下级都能扫描到；
+		// 2.不指定则与配置类同级/下级
 		for (Class<?> clazz : componentScan.getClassArray("basePackageClasses")) {
 			basePackages.add(ClassUtils.getPackageName(clazz));
 		}
